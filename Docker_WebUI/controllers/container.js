@@ -11,13 +11,13 @@ let [ cardList, newCards, stats ] = [ '', '', {}];
 let [ports_data, volumes_data, env_data, label_data] = [[], [], [], []];
 
 // The page
-export const containers = (req, res) => {
+export const container = (req, res) => {
 
     let name = req.session.user;
     let role = req.session.role;
     alert = req.session.alert;
     
-    res.render("containers", {
+    res.render("container", {
         name: name,
         avatar: name.charAt(0).toUpperCase(),
         role: role,
@@ -278,23 +278,23 @@ async function createCard (details) {
 
 async function userCards (session) {
     session.container_list = [];
-    // check what containers the user wants hidden
+    // check what container the user wants hidden
     let hidden = await Permission.findAll({ where: {user: session.user, hide: true}}, { attributes: ['containerName'] });
     hidden = hidden.map((container) => container.containerName);
-    // check what containers the user has permission to view
+    // check what container the user has permission to view
     let visable = await Permission.findAll({ where: { user: session.user, [Op.or]: [{ uninstall: true }, { edit: true }, { upgrade: true }, { start: true }, { stop: true }, { pause: true }, { restart: true }, { logs: true }, { view: true }] } });
     visable = visable.map((container) => container.containerName);
-    // get all containers
-    let containers = await docker.listContainers({ all: true });
-    // loop through containers
-    for (let i = 0; i < containers.length; i++) {
-        let container_name = containers[i].Names[0].replace('/', '');
-        // skip hidden containers
+    // get all container
+    let container = await docker.listContainer({ all: true });
+    // loop through container
+    for (let i = 0; i < container.length; i++) {
+        let container_name = container[i].Names[0].replace('/', '');
+        // skip hidden container
         if (hidden.includes(container_name)) { continue; }
-        // admin can see all containers that they don't have hidden
-        if (session.role == 'admin') { session.container_list.push({ container: container_name, state: containers[i].State }); }
-        // user can see any containers that they have any permissions for
-        else if (visable.includes(container_name)){ session.container_list.push({ container: container_name, state: containers[i].State }); }
+        // admin can see all container that they don't have hidden
+        if (session.role == 'admin') { session.container_list.push({ container: container_name, state: container[i].State }); }
+        // user can see any container that they have any permissions for
+        else if (visable.includes(container_name)){ session.container_list.push({ container: container_name, state: container[i].State }); }
     }
     // create a sent list if it doesn't exist
     if (!session.sent_list) { session.sent_list = []; }
@@ -302,19 +302,19 @@ async function userCards (session) {
     if (!session.new_cards) { session.new_cards = []; }
 }
 
-async function updatecontainers (session) {
+async function updatecontainer (session) {
     let container_list = session.container_list;
     let sent_list = session.sent_list;
     session.new_cards = [];
     session.update_list = [];
-    // loop through the containers list
+    // loop through the container list
     container_list.forEach(info => {
         let { container, state } = info;
         let sent = sent_list.find(c => c.container === container);
         if (!sent) { session.new_cards.push(container);}
         else if (sent.state !== state) { session.update_list.push(container); }
     });
-    // loop through the sent list to see if any containers have been removed
+    // loop through the sent list to see if any container have been removed
     sent_list.forEach(info => {
         let { container } = info;
         let exists = container_list.find(c => c.container === container);
@@ -331,7 +331,7 @@ export const SSE = async (req, res) => {
         await userCards(req.session);
         // check if the cards displayed are the same as what's in the session
         if ((JSON.stringify(req.session.container_list) === JSON.stringify(req.session.sent_list))) { return; }
-        await updatecontainers(req.session); 
+        await updatecontainer(req.session); 
 
         for (let i = 0; i < req.session.new_cards.length; i++) {
             let details = await containerInfo(req.session.new_cards[i]);
@@ -391,7 +391,7 @@ export async function addAlert (session, type, message) {
                               ${message}
                             </div>
                         </div>
-                        <button class="btn-close" data-hx-post="/containers/alert" data-hx-trigger="click" data-hx-target="#alert" data-hx-swap="outerHTML" style="padding-top: 0.5rem;" ></button>
+                        <button class="btn-close" data-hx-post="/container/alert" data-hx-trigger="click" data-hx-target="#alert" data-hx-swap="outerHTML" style="padding-top: 0.5rem;" ></button>
                     </div>`;
 }
 
