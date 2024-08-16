@@ -66,9 +66,9 @@ router.get("/logout", Logout);
 router.get("/register", Register);
 router.post("/register", submitRegister);  
 
-router.get("/", sessionCheck, Container);
-router.get("/container", sessionCheck, container);
-router.post("/container/:action", sessionCheck, permissionCheck, containerAction);
+router.get("/", sessionCheck, Containers);
+router.get("/container", sessionCheck, Containers);
+router.post("/container/:action", sessionCheck, permissionCheck, ContainersAction);
 router.get("/sse", sessionCheck, SSE);
 router.post("/updatePermissions", adminOnly, UpdatePermissions);
 router.get("/stats", sessionCheck, Stats);
