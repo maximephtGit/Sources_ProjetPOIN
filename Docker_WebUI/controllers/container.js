@@ -2,7 +2,7 @@ import { Readable } from 'stream';
 import { Permission, User } from '../database/models.js';
 import { docker } from '../server.js';
 import { readFileSync } from 'fs';
-import { currentLoad, mem, networkStats, fsSize, dockercontainerStats } from 'systeminformation';
+import { currentLoad, mem, networkStats, fsSize, dockerContainerStats } from 'systeminformation';
 import { Op } from 'sequelize';
 
 let hidden = '';
@@ -430,7 +430,7 @@ export const UpdatePermissions = async (req, res) => {
 export const Chart = async (req, res) => {
     let name = req.header('hx-trigger-name');
     if (!stats[name]) { stats[name] = { cpuArray: Array(15).fill(0), ramArray: Array(15).fill(0) }; }
-    const info = await dockercontainerStats(name);
+    const info = await dockerContainerStats(name);
     stats[name].cpuArray.push(Math.round(info[0].cpuPercent));
     stats[name].ramArray.push(Math.round(info[0].memPercent));
     stats[name].cpuArray = stats[name].cpuArray.slice(-15);
