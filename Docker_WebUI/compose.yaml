@@ -16,7 +16,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       # Podman socket
       #- /run/podman/podman.sock:/var/run/docker.sock
-
     networks:
       - epsi_net
 
@@ -24,5 +23,5 @@ volumes:
   epsiprjpoin:
 
   networks:
-  epsi_net:
-    driver: bridge
+    epsi_net:
+      driver: bridge
