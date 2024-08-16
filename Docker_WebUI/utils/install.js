@@ -25,9 +25,9 @@ export const Install = async (req, res) => {
         let docker_volumes = [];
 
         // Make sure there isn't a container already running that has the same name
-        let containers = await docker.listContainers({ all: true });
-        for (let i = 0; i < containers.length; i++) {
-            if (containers[i].Names[0].includes(name)) {
+        let container = await docker.listContainer({ all: true });
+        for (let i = 0; i < container.length; i++) {
+            if (container[i].Names[0].includes(name)) {
                 addAlert(req.session, 'danger', `App '${name}' already exists. Please choose a different name.`);
                 res.redirect('/');
                 return;

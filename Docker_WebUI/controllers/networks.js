@@ -6,10 +6,10 @@ export const Networks = async function(req, res) {
 
     let container_networks = [];
     // List all containers
-    let containers = await docker.listContainers({ all: true });
-    for (let i = 0; i < containers.length; i++) {
-        let network_name = containers[i].HostConfig.NetworkMode;
-        try { container_networks.push(containers[i].NetworkSettings.Networks[network_name].NetworkID) } catch {}
+    let container = await docker.listContainer({ all: true });
+    for (let i = 0; i < container.length; i++) {
+        let network_name = container[i].HostConfig.NetworkMode;
+        try { container_networks.push(container[i].NetworkSettings.Networks[network_name].NetworkID) } catch {}
     }
 
 

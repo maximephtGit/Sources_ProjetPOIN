@@ -20,16 +20,16 @@ export const Volumes = async function(req, res) {
                     <tbody class="table-tbody">`
 
     // List all containers
-    let containers = await docker.listContainers({ all: true });
+    let container = await docker.listContainer({ all: true });
 
     // Get the first 6 volumes from each container
-    for (let i = 0; i < containers.length; i++) {
-        try { container_volumes.push({type: containers[i].Mounts[0].Type, source: containers[i].Mounts[0].Source}); } catch { } 
-        try { container_volumes.push({type: containers[i].Mounts[1].Type, source: containers[i].Mounts[1].Source}); } catch { }
-        try { container_volumes.push({type: containers[i].Mounts[2].Type, source: containers[i].Mounts[2].Source}); } catch { }
-        try { container_volumes.push({type: containers[i].Mounts[3].Type, source: containers[i].Mounts[3].Source}); } catch { }
-        try { container_volumes.push({type: containers[i].Mounts[4].Type, source: containers[i].Mounts[4].Source}); } catch { }
-        try { container_volumes.push({type: containers[i].Mounts[5].Type, source: containers[i].Mounts[5].Source}); } catch { }
+    for (let i = 0; i < container.length; i++) {
+        try { container_volumes.push({type: container[i].Mounts[0].Type, source: container[i].Mounts[0].Source}); } catch { } 
+        try { container_volumes.push({type: container[i].Mounts[1].Type, source: container[i].Mounts[1].Source}); } catch { }
+        try { container_volumes.push({type: container[i].Mounts[2].Type, source: container[i].Mounts[2].Source}); } catch { }
+        try { container_volumes.push({type: container[i].Mounts[3].Type, source: container[i].Mounts[3].Source}); } catch { }
+        try { container_volumes.push({type: container[i].Mounts[4].Type, source: container[i].Mounts[4].Source}); } catch { }
+        try { container_volumes.push({type: container[i].Mounts[5].Type, source: container[i].Mounts[5].Source}); } catch { }
     }
     
     // List ALL volumes

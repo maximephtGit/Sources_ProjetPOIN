@@ -22,22 +22,22 @@ export const Portal = (req, res) => {
 
 async function CardList () {
     let name = req.session.user;
-    let containers = await Permission.findAll({ attributes: ['containerName'], where: { user: name }});
-    for (let i = 0; i < containers.length; i++) {
-        let details = await containerInfo(containers[i].containerName);
+    let container = await Permission.findAll({ attributes: ['containerName'], where: { user: name }});
+    for (let i = 0; i < container.length; i++) {
+        let details = await containerInfo(container[i].containerName);
         let card = await createCard(details);
         cardList += card;
     }
 }
 
-export const UserContainers = async (req, res) => {
+export const UserContainer = async (req, res) => {
     let cardList = '';
     let name = req.session.user;
-    let containers = await Permission.findAll({ attributes: ['containerName'], where: { user: name }});
+    let container = await Permission.findAll({ attributes: ['containerName'], where: { user: name }});
 
-    for (let i = 0; i < containers.length; i++) {
-        if (containers[i].containerName == null) { continue; }
-        let details = await containerInfo(containers[i].containerName);
+    for (let i = 0; i < container.length; i++) {
+        if (container[i].containerName == null) { continue; }
+        let details = await containerInfo(container[i].containerName);
         let card = await createCard(details);
         cardList += card;
     }
@@ -128,7 +128,7 @@ async function createCard (details) {
 }
 
 
-let [ cardList, newCards, containersArray, sentArray, updatesArray ] = [ '', '', [], [], [] ];
+let [ cardList, newCards, containerArray, sentArray, updatesArray ] = [ '', '', [], [], [] ];
 
 export async function addCard (name, state) {
     console.log(`Adding card for ${name}: ${state}`);
@@ -158,20 +158,20 @@ export const SSE = async (req, res) => {
 
     let eventCheck = setInterval(async () => {
         // builds array of containers and their states
-        containersArray = [];
-        await docker.listContainers({ all: true }).then(containers => {
-            containers.forEach(container => {
+        containerArray = [];
+        await docker.listContainer({ all: true }).then(container => {
+            container.forEach(container => {
                 let name = container.Names[0].replace('/', '');
                 if (!hidden.includes(name)) { // if not hidden
-                    containersArray.push({ container: name, state: container.State });
+                    containerArray.push({ container: name, state: container.State });
                 } 
             });
         });
 
-        if ((JSON.stringify(containersArray) !== JSON.stringify(sentArray))) {
+        if ((JSON.stringify(containerArray) !== JSON.stringify(sentArray))) {
             cardList = '';
             newCards = '';
-            containersArray.forEach(container => {
+            containerArray.forEach(container => {
                 const { container: containerName, state } = container;
                 const existingContainer = sentArray.find(c => c.container === containerName);
                 if (!existingContainer) {
@@ -194,7 +194,7 @@ export const SSE = async (req, res) => {
 
             sentArray.forEach(container => {
                 const { container: containerName } = container;
-                const existingContainer = containersArray.find(c => c.container === containerName);
+                const existingContainer = containerArray.find(c => c.container === containerName);
                 if (!existingContainer) {
                     updatesArray.push(containerName);
                 }
@@ -205,7 +205,7 @@ export const SSE = async (req, res) => {
                 res.write(`data: 'update cards'\n\n`);
             }
             updatesArray = [];
-            sentArray = containersArray.slice();
+            sentArray = containerArray.slice();
         }
 
     }, 500);
@@ -224,7 +224,7 @@ export const updateCards = async (req, res) => {
 }
 
 
-export const Containers = async (req, res) => {
+export const Container = async (req, res) => {
     CardList();
     // res.send(cardList);
 }
@@ -233,7 +233,7 @@ export const Card = async (req, res) => {
     let name = req.header('hx-trigger-name');
     console.log(`${name} requesting updated card`);
     // return nothing if in hidden or not found in containersArray
-    if (hidden.includes(name) || !containersArray.find(c => c.container === name)) {
+    if (hidden.includes(name) || !containerArray.find(c => c.container === name)) {
         res.send('');
         return;
     } else {

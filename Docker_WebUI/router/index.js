@@ -5,7 +5,7 @@ export const router = express.Router();
 // Controllers
 import { Login, submitLogin, Logout } from "../controllers/login.js";
 import { Register, submitRegister } from "../controllers/register.js";
-import { Container, ContainersAction, Stats, Chart, SSE, UpdatePermissions } from "../controllers/container.js";
+import { Container, ContainerAction, Stats, Chart, SSE, UpdatePermissions } from "../controllers/container.js";
 import { Apps, appSearch, InstallModal, ImportModal, LearnMore, Upload, removeTemplate } from "../controllers/apps.js";
 import { Users } from "../controllers/users.js";
 import { Images } from "../controllers/images.js";
@@ -66,9 +66,9 @@ router.get("/logout", Logout);
 router.get("/register", Register);
 router.post("/register", submitRegister);  
 
-router.get("/", sessionCheck, Containers);
-router.get("/container", sessionCheck, Containers);
-router.post("/container/:action", sessionCheck, permissionCheck, ContainersAction);
+router.get("/", sessionCheck, Container);
+router.get("/container", sessionCheck, Container);
+router.post("/container/:action", sessionCheck, permissionCheck, ContainerAction);
 router.get("/sse", sessionCheck, SSE);
 router.post("/updatePermissions", adminOnly, UpdatePermissions);
 router.get("/stats", sessionCheck, Stats);

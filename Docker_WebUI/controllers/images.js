@@ -39,10 +39,10 @@ export const Images = async function(req, res) {
         return;
     }
 
-    let containers = await docker.listContainers({ all: true });
+    let container = await docker.listContainer({ all: true });
     let container_images = [];
-    for (let i = 0; i < containers.length; i++) {
-        container_images.push(containers[i].Image);
+    for (let i = 0; i < container.length; i++) {
+        container_images.push(container[i].Image);
     }
 
     let images = await docker.listImages({ all: true });

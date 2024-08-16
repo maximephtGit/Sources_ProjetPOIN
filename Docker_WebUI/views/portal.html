@@ -134,13 +134,13 @@
             
             <!-- HTMX -->
             <div class="col-12">
-              <div class="row row-cards" id="containers" data-hx-get="/user_containers" data-hx-trigger="load" data-hx-swap="innerHTML">
+              <div class="row row-cards" id="container" data-hx-get="/user_container" data-hx-trigger="load" data-hx-swap="innerHTML">
               </div>
             </div>
 
             <!-- HTMX -->
             <div class="col-12">
-              <div class="row row-cards" data-hx-get="/new_user_cards" data-hx-trigger="sse:update" data-hx-swap="afterbegin" hx-target="#containers">
+              <div class="row row-cards" data-hx-get="/new_user_cards" data-hx-trigger="sse:update" data-hx-swap="afterbegin" hx-target="#container">
               </div>
             </div>
             
