@@ -11,13 +11,13 @@ let [ cardList, newCards, stats ] = [ '', '', {}];
 let [ports_data, volumes_data, env_data, label_data] = [[], [], [], []];
 
 // The page
-export const Dashboard = (req, res) => {
+export const Containers = (req, res) => {
 
     let name = req.session.user;
     let role = req.session.role;
     alert = req.session.alert;
     
-    res.render("dashboard", {
+    res.render("Containers", {
         name: name,
         avatar: name.charAt(0).toUpperCase(),
         role: role,
@@ -26,7 +26,7 @@ export const Dashboard = (req, res) => {
 }
 
 // The page actions
-export const DashboardAction = async (req, res) => {
+export const ContainersAction = async (req, res) => {
     let name = req.header('hx-trigger-name');
     let value = req.header('hx-trigger');
     let action = req.params.action;
@@ -302,7 +302,7 @@ async function userCards (session) {
     if (!session.new_cards) { session.new_cards = []; }
 }
 
-async function updateDashboard (session) {
+async function updateContainers (session) {
     let container_list = session.container_list;
     let sent_list = session.sent_list;
     session.new_cards = [];
@@ -331,7 +331,7 @@ export const SSE = async (req, res) => {
         await userCards(req.session);
         // check if the cards displayed are the same as what's in the session
         if ((JSON.stringify(req.session.container_list) === JSON.stringify(req.session.sent_list))) { return; }
-        await updateDashboard(req.session); 
+        await updateContainers(req.session); 
 
         for (let i = 0; i < req.session.new_cards.length; i++) {
             let details = await containerInfo(req.session.new_cards[i]);
@@ -391,7 +391,7 @@ export async function addAlert (session, type, message) {
                               ${message}
                             </div>
                         </div>
-                        <button class="btn-close" data-hx-post="/dashboard/alert" data-hx-trigger="click" data-hx-target="#alert" data-hx-swap="outerHTML" style="padding-top: 0.5rem;" ></button>
+                        <button class="btn-close" data-hx-post="/Containers/alert" data-hx-trigger="click" data-hx-target="#alert" data-hx-swap="outerHTML" style="padding-top: 0.5rem;" ></button>
                     </div>`;
 }
 

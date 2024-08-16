@@ -35,7 +35,7 @@ export const submitLogin = async function(req,res){
                     ip: req.socket.remoteAddress
                 });
                 
-                res.redirect("/dashboard");
+                res.redirect("/containers");
             } else {
 
                 const syslog = await Syslog.create({
