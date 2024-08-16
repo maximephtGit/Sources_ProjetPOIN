@@ -1,27 +1,27 @@
 version: "3.9"
 services:
-  dweebui:
-    container_name: dweebui
-    image: lllllllillllllillll/dweebui:v0.60
+  epsiprjpoin:
+    container_name: epsiprjpoin
+    image: max/epsiprjpoin:v0.1
     environment:
       PORT: 8000
-      SECRET: MrWiskers
+      SECRET: epsiarras
     restart: unless-stopped
     ports:
       - 8000:8000
     volumes:
-      - dweebui:/app/config
+      - epsiprjpoin:/app/config
       # Docker socket
       - /var/run/docker.sock:/var/run/docker.sock
       # Podman socket
       #- /run/podman/podman.sock:/var/run/docker.sock
 
     networks:
-      - dweebui_net
+      - epsiprjpoin_net
 
 volumes:
-  dweebui:
+  epsiprjpoin:
 
 networks:
-  dweebui_net:
+  epsiprjpoin_net:
     driver: bridge
