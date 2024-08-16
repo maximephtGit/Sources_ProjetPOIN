@@ -22,6 +22,6 @@ services:
 volumes:
   epsiprjpoin:
 
-  networks:
-    epsi_net:
-      driver: bridge
+networks:
+  epsi_net:
+    driver: bridge
