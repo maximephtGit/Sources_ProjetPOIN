@@ -5,7 +5,7 @@ export const router = express.Router();
 // Controllers
 import { Login, submitLogin, Logout } from "../controllers/login.js";
 import { Register, submitRegister } from "../controllers/register.js";
-import { Dashboard, DashboardAction, Stats, Chart, SSE, UpdatePermissions } from "../controllers/dashboard.js";
+import { Containers, ContainersAction, Stats, Chart, SSE, UpdatePermissions } from "../controllers/containers.js";
 import { Apps, appSearch, InstallModal, ImportModal, LearnMore, Upload, removeTemplate } from "../controllers/apps.js";
 import { Users } from "../controllers/users.js";
 import { Images } from "../controllers/images.js";
@@ -22,7 +22,7 @@ import { Uninstall } from "../utils/uninstall.js"
 // Permission Middleware
 const adminOnly = async (req, res, next) => {
     if (req.session.role == 'admin') { next(); } 
-    else { res.redirect('/dashboard'); }
+    else { res.redirect('/containers'); }
 }
 
 const sessionCheck = async (req, res, next) => {
