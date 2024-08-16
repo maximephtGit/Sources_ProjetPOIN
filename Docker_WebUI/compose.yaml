@@ -1,6 +1,6 @@
 version: '3.0'
 services:
-  custom_1:
+  EPSILab:
     build:
       context: .
       dockerfile: Dockerfile
@@ -22,3 +22,7 @@ services:
 
 volumes:
   epsiprjpoin:
+
+  networks:
+  epsi_net:
+    driver: bridge
