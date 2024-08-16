@@ -11,7 +11,7 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - epsiprjpoin:/app/config
+      - Docker_WebUI:/app/config
       # Docker socket
       - /var/run/docker.sock:/var/run/docker.sock
       # Podman socket
@@ -20,7 +20,7 @@ services:
       - epsi_net
 
 volumes:
-  epsiprjpoin:
+  Docker_WebUI:
 
 networks:
   epsi_net:
