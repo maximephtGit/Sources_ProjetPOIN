@@ -81,7 +81,7 @@ export const submitRegister = async function(req,res){
                         ip: req.socket.remoteAddress
                     });
 
-                    res.redirect("/dashboard");
+                    res.redirect("/container");
                 }
             } catch(err) {
                 res.render("register",{

@@ -1,7 +1,7 @@
 import { writeFileSync, mkdirSync, readFileSync, readdirSync, writeFile } from "fs";
 import { execSync } from "child_process";
 import { Syslog } from "../database/models.js";
-import { addAlert } from "../controllers/dashboard.js";
+import { addAlert } from "../controllers/container.js";
 import { docker } from "../server.js";
 import DockerodeCompose from "dockerode-compose";
 import yaml from 'js-yaml';
@@ -75,7 +75,7 @@ export const Install = async (req, res) => {
         }
 
 
-        addAlert(req.session, 'success', `Installing ${name}. It should appear on the dashboard shortly.`);
+        addAlert(req.session, 'success', `Installing ${name}. It should appear on the container shortly.`);
 
         // Compose file installation
         if (req.body.compose) {

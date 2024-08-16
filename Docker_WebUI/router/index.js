@@ -5,7 +5,7 @@ export const router = express.Router();
 // Controllers
 import { Login, submitLogin, Logout } from "../controllers/login.js";
 import { Register, submitRegister } from "../controllers/register.js";
-import { Containers, ContainersAction, Stats, Chart, SSE, UpdatePermissions } from "../controllers/containers.js";
+import { Containers, ContainersAction, Stats, Chart, SSE, UpdatePermissions } from "../controllers/container.js";
 import { Apps, appSearch, InstallModal, ImportModal, LearnMore, Upload, removeTemplate } from "../controllers/apps.js";
 import { Users } from "../controllers/users.js";
 import { Images } from "../controllers/images.js";
@@ -22,7 +22,7 @@ import { Uninstall } from "../utils/uninstall.js"
 // Permission Middleware
 const adminOnly = async (req, res, next) => {
     if (req.session.role == 'admin') { next(); } 
-    else { res.redirect('/containers'); }
+    else { res.redirect('/container'); }
 }
 
 const sessionCheck = async (req, res, next) => {
@@ -66,9 +66,9 @@ router.get("/logout", Logout);
 router.get("/register", Register);
 router.post("/register", submitRegister);  
 
-router.get("/", sessionCheck, Dashboard);
-router.get("/dashboard", sessionCheck, Dashboard);
-router.post("/dashboard/:action", sessionCheck, permissionCheck, DashboardAction);
+router.get("/", sessionCheck, Container);
+router.get("/container", sessionCheck, container);
+router.post("/container/:action", sessionCheck, permissionCheck, containerAction);
 router.get("/sse", sessionCheck, SSE);
 router.post("/updatePermissions", adminOnly, UpdatePermissions);
 router.get("/stats", sessionCheck, Stats);

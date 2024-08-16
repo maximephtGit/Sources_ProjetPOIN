@@ -256,8 +256,8 @@ function CatagoryColor(category) {
       return '<span class="badge bg-blue-lt">Productivity</span> ';
     case 'Tools':
       return '<span class="badge bg-blue-lt">Tools</span> ';
-    case 'Dashboard':
-      return '<span class="badge bg-blue-lt">Dashboard</span> ';
+    case 'Container':
+      return '<span class="badge bg-blue-lt">Container</span> ';
     case 'Communication':
       return '<span class="badge bg-azure-lt">Communication</span> ';
     case 'Media':
