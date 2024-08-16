@@ -2,7 +2,7 @@ import { Readable } from 'stream';
 import { Permission, User } from '../database/models.js';
 import { docker } from '../server.js';
 import { readFileSync } from 'fs';
-import { currentLoad, mem, networkStats, fsSize, dockerContainerStats } from 'systeminformation';
+import { currentLoad, mem, networkStats, fsSize, dockercontainerStats } from 'systeminformation';
 import { Op } from 'sequelize';
 
 let hidden = '';
@@ -11,13 +11,13 @@ let [ cardList, newCards, stats ] = [ '', '', {}];
 let [ports_data, volumes_data, env_data, label_data] = [[], [], [], []];
 
 // The page
-export const Containers = (req, res) => {
+export const containers = (req, res) => {
 
     let name = req.session.user;
     let role = req.session.role;
     alert = req.session.alert;
     
-    res.render("Containers", {
+    res.render("containers", {
         name: name,
         avatar: name.charAt(0).toUpperCase(),
         role: role,
@@ -26,7 +26,7 @@ export const Containers = (req, res) => {
 }
 
 // The page actions
-export const ContainersAction = async (req, res) => {
+export const containersAction = async (req, res) => {
     let name = req.header('hx-trigger-name');
     let value = req.header('hx-trigger');
     let action = req.params.action;
@@ -302,7 +302,7 @@ async function userCards (session) {
     if (!session.new_cards) { session.new_cards = []; }
 }
 
-async function updateContainers (session) {
+async function updatecontainers (session) {
     let container_list = session.container_list;
     let sent_list = session.sent_list;
     session.new_cards = [];
@@ -331,7 +331,7 @@ export const SSE = async (req, res) => {
         await userCards(req.session);
         // check if the cards displayed are the same as what's in the session
         if ((JSON.stringify(req.session.container_list) === JSON.stringify(req.session.sent_list))) { return; }
-        await updateContainers(req.session); 
+        await updatecontainers(req.session); 
 
         for (let i = 0; i < req.session.new_cards.length; i++) {
             let details = await containerInfo(req.session.new_cards[i]);
@@ -391,7 +391,7 @@ export async function addAlert (session, type, message) {
                               ${message}
                             </div>
                         </div>
-                        <button class="btn-close" data-hx-post="/Containers/alert" data-hx-trigger="click" data-hx-target="#alert" data-hx-swap="outerHTML" style="padding-top: 0.5rem;" ></button>
+                        <button class="btn-close" data-hx-post="/containers/alert" data-hx-trigger="click" data-hx-target="#alert" data-hx-swap="outerHTML" style="padding-top: 0.5rem;" ></button>
                     </div>`;
 }
 
@@ -430,7 +430,7 @@ export const UpdatePermissions = async (req, res) => {
 export const Chart = async (req, res) => {
     let name = req.header('hx-trigger-name');
     if (!stats[name]) { stats[name] = { cpuArray: Array(15).fill(0), ramArray: Array(15).fill(0) }; }
-    const info = await dockerContainerStats(name);
+    const info = await dockercontainerStats(name);
     stats[name].cpuArray.push(Math.round(info[0].cpuPercent));
     stats[name].ramArray.push(Math.round(info[0].memPercent));
     stats[name].cpuArray = stats[name].cpuArray.slice(-15);
