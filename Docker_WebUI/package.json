@@ -1,7 +1,7 @@
 {
-  "name": "dweebui",
-  "version": "0.60",
-  "description": "Free and Open-Source WebUI For Managing Your Containers.",
+  "name": "epsiprjpoin",
+  "version": "1",
+  "description": "EPSI Projet POIN Arras.",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "lllllllillllllillll",
+  "author": "EPSI",
   "license": "MIT",
   "dependencies": {
     "adm-zip": "^0.5.12",
