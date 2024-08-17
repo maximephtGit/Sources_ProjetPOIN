@@ -395,7 +395,7 @@ export async function addAlert (session, type, message) {
                     </div>`;
 }
 
-export const UpdatePermissions = async (req, res) => {
+export const nodeUpdatePermissions = async (req, res) => {
     let { user, container, reset_permissions } = req.body;
     let id = req.header('hx-trigger');
     if (reset_permissions) {
@@ -418,10 +418,10 @@ export const UpdatePermissions = async (req, res) => {
         }  
     });
     if (id == 'submit') {
-        res.send('<button class="btn" type="button" id="confirmed" hx-post="/updatePermissions" hx-swap="outerHTML" hx-trigger="load delay:2s">Update ✔️</button>');
+        res.send('<button class="btn" type="button" id="confirmed" hx-post="/nodeupdatePermissions" hx-swap="outerHTML" hx-trigger="load delay:2s">Update ✔️</button>');
         return;
     } else if (id == 'confirmed') {
-        res.send('<button class="btn" type="button" id="submit" hx-post="/updatePermissions" hx-vals="#updatePermissions" hx-swap="outerHTML">Update  </button>');
+        res.send('<button class="btn" type="button" id="submit" hx-post="/nodeupdatePermissions" hx-vals="#nodeupdatePermissions" hx-swap="outerHTML">Update  </button>');
         return;
     }
 }
