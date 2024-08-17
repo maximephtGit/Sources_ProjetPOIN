@@ -7,7 +7,7 @@ import { Op } from 'sequelize';
 
 let hidden = '';
 let alert = '';
-let [ cardList, newCards, stats ] = [ '', '', {}];
+let [ cardList, newCards, nodestats ] = [ '', '', {}];
 let [ports_data, volumes_data, env_data, label_data] = [[], [], [], []];
 
 // The page
@@ -353,7 +353,7 @@ export const SSE = async (req, res) => {
 };
 
 // Server metrics (CPU, RAM, TX, RX, DISK)
-export const Stats = async (req, res) => {
+export const nodeStats = async (req, res) => {
     let name = req.header('hx-trigger-name');
     let color = req.header('hx-trigger');
     let value = 0;
@@ -429,18 +429,18 @@ export const UpdatePermissions = async (req, res) => {
 // Container charts
 export const Chart = async (req, res) => {
     let name = req.header('hx-trigger-name');
-    if (!stats[name]) { stats[name] = { cpuArray: Array(15).fill(0), ramArray: Array(15).fill(0) }; }
+    if (!nodestats[name]) { nodestats[name] = { cpuArray: Array(15).fill(0), ramArray: Array(15).fill(0) }; }
     const info = await dockerContainerStats(name);
-    stats[name].cpuArray.push(Math.round(info[0].cpuPercent));
-    stats[name].ramArray.push(Math.round(info[0].memPercent));
-    stats[name].cpuArray = stats[name].cpuArray.slice(-15);
-    stats[name].ramArray = stats[name].ramArray.slice(-15);
+    nodestats[name].cpuArray.push(Math.round(info[0].cpuPercent));
+    nodestats[name].ramArray.push(Math.round(info[0].memPercent));
+    nodestats[name].cpuArray = nodestats[name].cpuArray.slice(-15);
+    nodestats[name].ramArray = nodestats[name].ramArray.slice(-15);
     let chart = `
         <script>
             ${name}chart.updateSeries([{
-                data: [${stats[name].cpuArray}]
+                data: [${nodestats[name].cpuArray}]
             }, {
-                data: [${stats[name].ramArray}]
+                data: [${nodestats[name].ramArray}]
             }])
         </script>`
     res.send(chart);
