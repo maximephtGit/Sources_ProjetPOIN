@@ -6,7 +6,7 @@ export const router = express.Router();
 import { Login, submitLogin, Logout } from "../controllers/login.js";
 import { Register, submitRegister } from "../controllers/register.js";
 import { Dashboard, DashboardAction, Stats, Chart, SSE, UpdatePermissions } from "../controllers/dashboard.js";
-import { Dashboard, DashboardAction, Stats, Chart, SSE, UpdatePermissions } from "../controllers/node.js";
+// import { Dashboard, DashboardAction, Stats, Chart, SSE, UpdatePermissions } from "../controllers/node.js";
 import { Apps, appSearch, InstallModal, ImportModal, LearnMore, Upload, removeTemplate } from "../controllers/apps.js";
 import { Users } from "../controllers/users.js";
 import { Images } from "../controllers/images.js";
