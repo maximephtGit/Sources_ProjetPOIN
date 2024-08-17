@@ -4,6 +4,7 @@ import { docker } from '../server.js';
 import { readFileSync } from 'fs';
 import { currentLoad, mem, networkStats, fsSize, dockerContainerStats } from 'systeminformation';
 import { Op } from 'sequelize';
+import { hostname } from 'os';
 
 let hidden = '';
 let alert = '';
@@ -373,6 +374,9 @@ export const nodeStats = async (req, res) => {
             return;
         case 'DISK':
             await fsSize().then(data => { value = data[0].use; });
+            break;
+        case 'HOSTNAME':
+            await hostname().then(data => { value = data[0].toString; });
             break;
     }
     let info = `<div class="font-weight-medium"> <label class="cpu-text mb-1">${name} ${value}%</label></div>
