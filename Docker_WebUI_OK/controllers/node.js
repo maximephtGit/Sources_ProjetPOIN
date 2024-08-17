@@ -323,7 +323,7 @@ async function updateNode (session) {
 }
 
 // HTMX server-side events
-export const SSE = async (req, res) => {
+export const noseSSE = async (req, res) => {
     // set the headers for server-sent events
     res.writeHead(200, { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', 'Connection': 'keep-alive' });
     // check for container changes every 500ms

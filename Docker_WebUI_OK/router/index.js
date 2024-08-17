@@ -6,7 +6,7 @@ export const router = express.Router();
 import { Login, submitLogin, Logout } from "../controllers/login.js";
 import { Register, submitRegister } from "../controllers/register.js";
 import { Dashboard, DashboardAction, Stats, Chart, SSE, UpdatePermissions } from "../controllers/dashboard.js";
-import { Node, NodeAction, nodeStats, nodeChart, SSE, UpdatePermissions } from "../controllers/node.js";
+import { Node, NodeAction, nodeStats, nodeChart, nodeSSE, nodeUpdatePermissions } from "../controllers/node.js";
 import { Apps, appSearch, InstallModal, ImportModal, LearnMore, Upload, removeTemplate } from "../controllers/apps.js";
 import { Users } from "../controllers/users.js";
 import { Images } from "../controllers/images.js";
@@ -72,6 +72,8 @@ router.get("/node", sessionCheck, Node);
 router.post("/node/:action", sessionCheck, permissionCheck, NodeAction);
 router.get("/nodestats", sessionCheck, nodeStats);
 router.get("/nodechart", sessionCheck, nodeChart);
+router.get("/nodesse", sessionCheck, nodeSSE);
+router.post("/nodeupdatePermissions", adminOnly, nodeUpdatePermissions);
 
 
 router.get("/", sessionCheck, Dashboard);
