@@ -353,7 +353,7 @@ export const nodeSSE = async (req, res) => {
     });
 };
 
-// Server metrics (CPU, RAM, TX, RX, DISK)
+// Server metrics (CPU, RAM, TX, RX, DISK, HOSTNAME)
 export const nodeStats = async (req, res) => {
     let name = req.header('hx-trigger-name');
     let color = req.header('hx-trigger');

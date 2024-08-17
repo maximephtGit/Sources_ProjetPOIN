@@ -120,6 +120,31 @@
                         </div>
 
                         <!-- HTMX -->
+                        <div class="col" name="HOSTNAME" id="orange" data-hx-get="/stats" data-hx-trigger="load, every 3s">
+                          <div class="font-weight-medium">
+                            <label class="hostname-text mb-1" for="hostname">HOSTNAME</label>
+                          </div>
+                          <div class="meter animate orange">
+                            <span style="width:20%"><span></span></span>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card card-sm">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <span class="bg-orange text-white avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-database" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0"></path> <path d="M4 6v6a8 3 0 0 0 16 0v-6"></path> <path d="M4 12v6a8 3 0 0 0 16 0v-6"></path></svg>
+                          </span>
+                        </div>
+
+                        <!-- HTMX -->
                         <div class="col" name="DISK" id="orange" data-hx-get="/stats" data-hx-trigger="load, every 3s">
                           <div class="font-weight-medium">
                             <label class="disk-text mb-1" for="disk">DISK 0%</label>
