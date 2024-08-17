@@ -427,7 +427,7 @@ export const UpdatePermissions = async (req, res) => {
 }
 
 // Container charts
-export const Chart = async (req, res) => {
+export const nodeChart = async (req, res) => {
     let name = req.header('hx-trigger-name');
     if (!nodestats[name]) { nodestats[name] = { cpuArray: Array(15).fill(0), ramArray: Array(15).fill(0) }; }
     const info = await dockerContainerStats(name);
@@ -435,13 +435,13 @@ export const Chart = async (req, res) => {
     nodestats[name].ramArray.push(Math.round(info[0].memPercent));
     nodestats[name].cpuArray = nodestats[name].cpuArray.slice(-15);
     nodestats[name].ramArray = nodestats[name].ramArray.slice(-15);
-    let chart = `
+    let nodechart = `
         <script>
-            ${name}chart.updateSeries([{
+            ${name}nodechart.updateSeries([{
                 data: [${nodestats[name].cpuArray}]
             }, {
                 data: [${nodestats[name].ramArray}]
             }])
         </script>`
-    res.send(chart);
+    res.send(nodechart);
 }

@@ -71,6 +71,7 @@ router.get("/", sessionCheck, Node);
 router.get("/node", sessionCheck, Node);
 router.post("/node/:action", sessionCheck, permissionCheck, NodeAction);
 router.get("/nodestats", sessionCheck, nodeStats);
+router.get("/nodechart", sessionCheck, nodeChart);
 
 
 router.get("/", sessionCheck, Dashboard);
