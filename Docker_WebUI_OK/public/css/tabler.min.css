@@ -18025,6 +18025,7 @@ fieldset:disabled .btn {
   --tblr-spacer-8: 8rem;
   --tblr-spacer: 1rem;
   --tblr-bg-surface: var(--tblr-white);
+  --tblr-bg-epsi: var(--tblr-blue);
   --tblr-bg-surface-secondary: var(--tblr-gray-100);
   --tblr-bg-surface-tertiary: var(--tblr-gray-50);
   --tblr-bg-surface-dark: var(--tblr-dark);
@@ -18242,10 +18243,10 @@ body {
 }
 
 .navbar {
-  --tblr-navbar-bg: var(--tblr-bg-surface);
+  --tblr-navbar-bg: var(--tblr-bg-epsi);
   --tblr-navbar-border-width: var(--tblr-border-width);
   --tblr-navbar-active-border-color: var(--tblr-primary);
-  --tblr-navbar-active-bg: rgba(0, 0, 0, 0.06);
+  --tblr-navbar-active-bg: rgba(23, 44, 235, 0.548);
   --tblr-navbar-color: var(--tblr-body-color);
   --tblr-navbar-border-color: var(--tblr-border-color);
   align-items: stretch;
