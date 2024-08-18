@@ -17,6 +17,7 @@
 
 :root,
 [data-bs-theme=light] {
+  --tblr-epsi: #b66dfabb;
   --tblr-blue: #206bc4;
   --tblr-indigo: #4263eb;
   --tblr-purple: #ae3ec9;
@@ -18027,11 +18028,12 @@ fieldset:disabled .btn {
   --tblr-spacer-7: 5rem;
   --tblr-spacer-8: 8rem;
   --tblr-spacer: 1rem;
-  --tblr-bg-surface: var(--tblr-yellow);
+  --tblr-bg-surface: var(--tblr-white);
+  --tblr-bg-surface-epsi: var(--tblr-epsi);
   --tblr-bg-surface-secondary: var(--tblr-gray-100);
   --tblr-bg-surface-tertiary: var(--tblr-gray-50);
   --tblr-bg-surface-dark: var(--tblr-dark);
-  --tblr-bg-forms: var(--tblr-bg-surface);
+  --tblr-bg-forms: var(--tblr-bg-surface-epsi);
   --tblr-border-color: #dadfe5;
   --tblr-border-color-translucent: rgba(4, 32, 69, 0.14);
   --tblr-border-dark-color: #bbc3cd;
