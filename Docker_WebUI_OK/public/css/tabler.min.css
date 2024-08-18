@@ -18246,7 +18246,7 @@ body {
   --tblr-navbar-bg: var(--tblr-bg-epsi);
   --tblr-navbar-border-width: var(--tblr-border-width);
   --tblr-navbar-active-border-color: var(--tblr-primary);
-  --tblr-navbar-active-bg: rgba(23, 44, 235, 0.548);
+  --tblr-navbar-active-bg: rgba(249, 253, 14, 0.966);
   --tblr-navbar-color: var(--tblr-body-color);
   --tblr-navbar-border-color: var(--tblr-border-color);
   align-items: stretch;
