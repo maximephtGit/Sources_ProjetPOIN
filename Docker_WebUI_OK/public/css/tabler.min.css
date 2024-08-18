@@ -84,7 +84,7 @@
   --tblr-danger-rgb: 214, 57, 57;
   --tblr-light-rgb: 252, 253, 254;
   --tblr-dark-rgb: 24, 36, 51;
-  --tblr-muted-rgb: 102, 115, 130;
+  --tblr-muted-rgb: 
   --tblr-blue-rgb: 32, 107, 196;
   --tblr-azure-rgb: 66, 153, 225;
   --tblr-indigo-rgb: 66, 99, 235;
@@ -4872,7 +4872,7 @@ fieldset:disabled .btn {
   --tblr-nav-tabs-border-radius: var(--tblr-border-radius);
   --tblr-nav-tabs-link-hover-border-color: var(--tblr-border-color) var(--tblr-border-color) var(--tblr-border-color);
   --tblr-nav-tabs-link-active-color: var(--tblr-body-color);
-  --tblr-nav-tabs-link-active-bg: var(--tblr-body-bg-epsi-active);
+  --tblr-nav-tabs-link-active-bg: var(--tblr-body-bg);
   --tblr-nav-tabs-link-active-border-color: var(--tblr-border-color) var(--tblr-border-color) var(--tblr-border-color);
   border-bottom: var(--tblr-nav-tabs-border-width) solid var(--tblr-nav-tabs-border-color)
 }
@@ -5051,6 +5051,13 @@ fieldset:disabled .btn {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none
+}
+
+.navbar-nav:focus,
+.navbar-nav:hover {
+  color: var(--tblr-dropdown-link-hover-color);
+  text-decoration: none;
+  background-color: var(--tblr-dropdown-link-hover-bg)
 }
 
 .navbar-nav .nav-link.active,
@@ -18482,7 +18489,7 @@ body {
 
   .navbar-expand-md .nav-item.active {
     position: relative
-  }
+   }
 
   .navbar-expand-md .nav-item.active:after {
     content: "";
