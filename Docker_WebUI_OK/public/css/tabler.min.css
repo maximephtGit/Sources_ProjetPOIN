@@ -4636,7 +4636,7 @@ fieldset:disabled .btn {
   color: var(--tblr-dropdown-link-color);
   text-align: inherit;
   white-space: nowrap;
-  background-color: transparent;
+  background-color: var(--tblr-orange)
   border: 0;
   border-radius: var(--tblr-dropdown-item-border-radius, 0)
 }
