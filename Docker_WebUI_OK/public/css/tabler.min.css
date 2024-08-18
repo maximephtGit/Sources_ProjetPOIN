@@ -18027,7 +18027,7 @@ fieldset:disabled .btn {
   --tblr-spacer-7: 5rem;
   --tblr-spacer-8: 8rem;
   --tblr-spacer: 1rem;
-  --tblr-bg-surface: var(--tblr-white);
+  --tblr-bg-surface: var(--tblr-red);
   --tblr-bg-surface-secondary: var(--tblr-gray-100);
   --tblr-bg-surface-tertiary: var(--tblr-gray-50);
   --tblr-bg-surface-dark: var(--tblr-dark);
