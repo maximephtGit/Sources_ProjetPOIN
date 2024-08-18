@@ -120,5 +120,4 @@
     background-clip: border-box;
     border: var(--tblr-card-border-width) solid var(--tblr-card-border-color);
     border-radius: var(--tblr-card-border-radius);
-
 }

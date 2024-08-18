@@ -18033,7 +18033,7 @@ fieldset:disabled .btn {
   --tblr-bg-surface-secondary: var(--tblr-gray-100);
   --tblr-bg-surface-tertiary: var(--tblr-gray-50);
   --tblr-bg-surface-dark: var(--tblr-dark);
-  --tblr-bg-forms: var(--tblr-bg-surface-epsi);
+  --tblr-bg-forms: var(--tblr-bg-surface);
   --tblr-border-color: #dadfe5;
   --tblr-border-color-translucent: rgba(4, 32, 69, 0.14);
   --tblr-border-dark-color: #bbc3cd;
