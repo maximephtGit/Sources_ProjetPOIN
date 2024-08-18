@@ -169,8 +169,12 @@
   --tblr-highlight-bg: #fdeccc;
   --tblr-border-width: 1px;
   --tblr-border-style: solid;
+  /*!
   --tblr-border-color: #dadfe5;
   --tblr-border-color-translucent: rgba(4, 32, 69, 0.14);
+  */
+  --tblr-border-color: #0d4b97;
+  --tblr-border-color-translucent: rgba(218, 169, 6, 0.945);
   --tblr-border-radius: 4px;
   --tblr-border-radius-sm: 2px;
   --tblr-border-radius-lg: 8px;
