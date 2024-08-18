@@ -17,7 +17,6 @@
 
 :root,
 [data-bs-theme=light] {
-  --tblr-epsi: #b66dfabb;
   --tblr-blue: #206bc4;
   --tblr-indigo: #4263eb;
   --tblr-purple: #ae3ec9;
@@ -147,8 +146,8 @@
   --tblr-body-font-weight: 400;
   --tblr-body-line-height: 1.4285714286;
   --tblr-body-color: #182433;
-  --tblr-body-color-rgb: 6, 70, 167;
-  --tblr-body-bg: #0646a7;
+  --tblr-body-color-rgb: 24, 36, 51;
+  --tblr-body-bg: #f6f8fb;
   --tblr-body-bg-rgb: 246, 248, 251;
   --tblr-emphasis-color: #182433;
   --tblr-emphasis-color-rgb: 24, 36, 51;
@@ -5085,10 +5084,7 @@ fieldset:disabled .btn {
   font-size: var(--tblr-navbar-toggler-font-size);
   line-height: 1;
   color: var(--tblr-navbar-color);
-  /*
   background-color: transparent;
-  */
-  background-color:rgb(43, 194, 83);
   border: var(--tblr-border-width) solid var(--tblr-navbar-toggler-border-color);
   border-radius: var(--tblr-navbar-toggler-border-radius);
   transition: var(--tblr-navbar-toggler-transition)
@@ -5165,7 +5161,7 @@ fieldset:disabled .btn {
     width: auto !important;
     height: auto !important;
     visibility: visible !important;
-    background-color: rgb(43, 194, 83);
+    background-color: transparent !important;
     border: 0 !important;
     transform: none !important;
     box-shadow: none;
@@ -5223,7 +5219,7 @@ fieldset:disabled .btn {
     width: auto !important;
     height: auto !important;
     visibility: visible !important;
-    background-color: rgb(43, 194, 83);
+    background-color: transparent !important;
     border: 0 !important;
     transform: none !important;
     box-shadow: none;
@@ -5281,7 +5277,7 @@ fieldset:disabled .btn {
     width: auto !important;
     height: auto !important;
     visibility: visible !important;
-    background-color: rgb(43, 194, 83);
+    background-color: transparent !important;
     border: 0 !important;
     transform: none !important;
     box-shadow: none;
@@ -5339,7 +5335,7 @@ fieldset:disabled .btn {
     width: auto !important;
     height: auto !important;
     visibility: visible !important;
-    background-color: rgb(43, 194, 83);
+    background-color: transparent !important;
     border: 0 !important;
     transform: none !important;
     box-shadow: none;
@@ -5397,7 +5393,7 @@ fieldset:disabled .btn {
     width: auto !important;
     height: auto !important;
     visibility: visible !important;
-    background-color: rgb(43, 194, 83);
+    background-color: transparent !important;
     border: 0 !important;
     transform: none !important;
     box-shadow: none;
@@ -5454,7 +5450,7 @@ fieldset:disabled .btn {
   width: auto !important;
   height: auto !important;
   visibility: visible !important;
-  background-color: rgb(43, 194, 83);
+  background-color: transparent !important;
   border: 0 !important;
   transform: none !important;
   box-shadow: none;
@@ -5511,7 +5507,7 @@ fieldset:disabled .btn {
   height: var(--tblr-card-height);
   color: var(--tblr-body-color);
   word-wrap: break-word;
-  background-color: rgb(43, 194, 83);
+  background-color: var(--tblr-card-bg);
   background-clip: border-box;
   border: var(--tblr-card-border-width) solid var(--tblr-card-border-color);
   border-radius: var(--tblr-card-border-radius);
@@ -18029,7 +18025,6 @@ fieldset:disabled .btn {
   --tblr-spacer-8: 8rem;
   --tblr-spacer: 1rem;
   --tblr-bg-surface: var(--tblr-white);
-  --tblr-bg-surface-epsi: var(--tblr-epsi);
   --tblr-bg-surface-secondary: var(--tblr-gray-100);
   --tblr-bg-surface-tertiary: var(--tblr-gray-50);
   --tblr-bg-surface-dark: var(--tblr-dark);
@@ -18250,7 +18245,7 @@ body {
   --tblr-navbar-bg: var(--tblr-bg-surface);
   --tblr-navbar-border-width: var(--tblr-border-width);
   --tblr-navbar-active-border-color: var(--tblr-primary);
-  --tblr-navbar-active-bg: rgba(236, 16, 34, 1);
+  --tblr-navbar-active-bg: rgba(0, 0, 0, 0.06);
   --tblr-navbar-color: var(--tblr-body-color);
   --tblr-navbar-border-color: var(--tblr-border-color);
   align-items: stretch;
