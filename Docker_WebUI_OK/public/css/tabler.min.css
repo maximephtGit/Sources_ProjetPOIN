@@ -19071,7 +19071,7 @@ body {
 
 /* Optionnel: Ajouter un style pour l'élément lorsqu'il est survolé */
 .navbar-nav .nav-item:hover {
-  background-color: #2623e641; /* Une teinte plus sombre de bleu au survol */
+  background-color: #016cf81e; /* Une teinte plus sombre de bleu au survol */
   color: #ffffff; /* Garder le texte en blanc */
 }
 
