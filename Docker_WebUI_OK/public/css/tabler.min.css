@@ -5164,7 +5164,7 @@ fieldset:disabled .btn {
     width: auto !important;
     height: auto !important;
     visibility: visible !important;
-    background-color: transparent !important;
+    background-color: rgb(43, 194, 83);
     border: 0 !important;
     transform: none !important;
     box-shadow: none;
@@ -5222,7 +5222,7 @@ fieldset:disabled .btn {
     width: auto !important;
     height: auto !important;
     visibility: visible !important;
-    background-color: transparent !important;
+    background-color: rgb(43, 194, 83);
     border: 0 !important;
     transform: none !important;
     box-shadow: none;
@@ -5280,7 +5280,7 @@ fieldset:disabled .btn {
     width: auto !important;
     height: auto !important;
     visibility: visible !important;
-    background-color: transparent !important;
+    background-color: rgb(43, 194, 83);
     border: 0 !important;
     transform: none !important;
     box-shadow: none;
@@ -5338,7 +5338,7 @@ fieldset:disabled .btn {
     width: auto !important;
     height: auto !important;
     visibility: visible !important;
-    background-color: transparent !important;
+    background-color: rgb(43, 194, 83);
     border: 0 !important;
     transform: none !important;
     box-shadow: none;
@@ -5396,7 +5396,7 @@ fieldset:disabled .btn {
     width: auto !important;
     height: auto !important;
     visibility: visible !important;
-    background-color: transparent !important;
+    background-color: rgb(43, 194, 83);
     border: 0 !important;
     transform: none !important;
     box-shadow: none;
@@ -5453,7 +5453,7 @@ fieldset:disabled .btn {
   width: auto !important;
   height: auto !important;
   visibility: visible !important;
-  background-color: transparent !important;
+  background-color: rgb(43, 194, 83);
   border: 0 !important;
   transform: none !important;
   box-shadow: none;
@@ -5510,7 +5510,7 @@ fieldset:disabled .btn {
   height: var(--tblr-card-height);
   color: var(--tblr-body-color);
   word-wrap: break-word;
-  background-color: var(--tblr-card-bg);
+  background-color: rgb(43, 194, 83);
   background-clip: border-box;
   border: var(--tblr-card-border-width) solid var(--tblr-card-border-color);
   border-radius: var(--tblr-card-border-radius);
