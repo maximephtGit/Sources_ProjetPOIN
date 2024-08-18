@@ -30,21 +30,26 @@
       <div class="page-body">
         <div class="container-xl">
 
-          <div class="card-header">
-            <h3 class="card-title">Host Information</h3>
-            <div class="card-options btn-list">
-              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHostModal">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> 
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> 
-                  <path d="M12 5l0 14"></path> 
-                  <path d="M5 12l14 0"></path> 
-                </svg>
-                New Host
-              </a>
-            </div>
-          </div>
+          <div class="row row-deck row-cards" hx-ext="sse" sse-connect="/sse">
+          
+            <div class="col-12">
+              <div class="row row-cards">
 
-          <!-- Modale pour ajouter un nouveau host -->
+                <div class="card-header">
+                  <h3 class="card-title">Host Information</h3>
+                  <div class="card-options btn-list">
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHostModal">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> 
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> 
+                        <path d="M12 5l0 14"></path> 
+                        <path d="M5 12l14 0"></path> 
+                      </svg>
+                      New Host
+                    </a>
+                  </div>
+                </div>
+
+                  <!-- Modale pour ajouter un nouveau host -->
           <div class="modal fade" id="addHostModal" tabindex="-1" aria-labelledby="addHostModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -76,6 +81,8 @@
               </div>
             </div>
           </div>
+
+        
           
 
            <!-- Ajout d'une nouvelle boîte pour afficher le nom du host Docker
@@ -93,11 +100,7 @@
           </div>
         Fin de l'ajout de la boîte -->
         
-          <div class="row row-deck row-cards" hx-ext="sse" sse-connect="/sse">
-          
-            <div class="col-12">
-              <div class="row row-cards">
-               
+                   
                 <div class="col-sm-6 col-lg-3">
                   <div class="card card-sm">
                     <div class="card-body">
