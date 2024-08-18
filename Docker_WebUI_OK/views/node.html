@@ -158,7 +158,7 @@
               <div class="col-12">
                 <!-- Ajout du bouton pour ajouter un nouveau host -->
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHostModal">
-                  Ajouter un Host
+                  Add Node
                 </button>
               </div>
             </div>
@@ -174,7 +174,15 @@
                   <div class="modal-body">
                     <form id="addHostForm">
                       <div class="mb-3">
-                        <label for="hostnameInput" class="form-label">Nom du Host</label>
+                        <label for="hostnameInput" class="form-label">Hostname</label>
+                        <input type="text" class="form-control" id="hostnameInput" placeholder="Entrez le nom du host" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="userInput" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="hostnameInput" placeholder="Entrez le nom du host" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="passwordInput" class="form-label">Password</label>
                         <input type="text" class="form-control" id="hostnameInput" placeholder="Entrez le nom du host" required>
                       </div>
                       <!-- Ajoutez d'autres champs de formulaire si nécessaire -->
