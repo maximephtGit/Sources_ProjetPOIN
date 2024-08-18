@@ -4636,7 +4636,7 @@ fieldset:disabled .btn {
   color: var(--tblr-dropdown-link-color);
   text-align: inherit;
   white-space: nowrap;
-  background-color: var(--tblr-green);
+  background-color: transparent;
   border: 0;
   border-radius: var(--tblr-dropdown-item-border-radius, 0)
 }
@@ -4645,14 +4645,14 @@ fieldset:disabled .btn {
 .dropdown-item:hover {
   color: var(--tblr-dropdown-link-hover-color);
   text-decoration: none;
-  background-color: var(--tblr-orange);
+  background-color: var(--tblr-gray-200);
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
   color: var(--tblr-dropdown-link-active-color);
   text-decoration: none;
-  background-color: var(--tblr-blue);
+  background-color: var(--tblr-gray-500);
 }
 
 .dropdown-item.disabled,
