@@ -19062,7 +19062,9 @@ body {
 }
 
 .navbar-nav .nav-item:focus {
-background-color: #aec9f3;
+  color: #aec9f3;
+  text-decoration: none;
+  background-color: #aec9f3
 }  
 
 .navbar-side {
