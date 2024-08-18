@@ -19058,7 +19058,8 @@ body {
 .navbar-nav .nav-item {
   display: flex;
   flex-direction: column;
-  justify-content: center
+  justify-content: center;
+  background-color: #bfcee0;
 }
 
 .navbar-side {
