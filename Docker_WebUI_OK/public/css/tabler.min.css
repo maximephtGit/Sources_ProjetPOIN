@@ -4636,7 +4636,7 @@ fieldset:disabled .btn {
   color: var(--tblr-dropdown-link-color);
   text-align: inherit;
   white-space: nowrap;
-  background-color: var(--tblr-orange)
+  background-color: var(--tblr-green);
   border: 0;
   border-radius: var(--tblr-dropdown-item-border-radius, 0)
 }
@@ -4645,21 +4645,21 @@ fieldset:disabled .btn {
 .dropdown-item:hover {
   color: var(--tblr-dropdown-link-hover-color);
   text-decoration: none;
-  background-color: var(--tblr-dropdown-link-hover-bg)
+  background-color: var(--tblr-orange);
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
   color: var(--tblr-dropdown-link-active-color);
   text-decoration: none;
-  background-color: var(--tblr-dropdown-link-active-bg)
+  background-color: var(--tblr-blue);
 }
 
 .dropdown-item.disabled,
 .dropdown-item:disabled {
   color: var(--tblr-dropdown-link-disabled-color);
   pointer-events: none;
-  background-color: transparent
+  background-color: var(--tblr-dark);
 }
 
 .dropdown-menu.show {
