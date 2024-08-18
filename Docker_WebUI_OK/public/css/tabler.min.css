@@ -19061,16 +19061,17 @@ body {
   justify-content: center;
 }
 
-/* Ajouter ce CSS pour changer la couleur de fond de l'élément sélectionné */
+/* Ajouter ce CSS pour changer la couleur de fond de l'élément sélectionné
 .navbar-nav .nav-item.active,
 .navbar-nav .nav-item:focus {
-  background-color: #004080; /* Couleur de fond bleue par exemple */
-  color: #ffffff; /* Couleur du texte en blanc pour un meilleur contraste */
+  background-color: #004080;
+  color: #ffffff;
 }
+*/
 
 /* Optionnel: Ajouter un style pour l'élément lorsqu'il est survolé */
 .navbar-nav .nav-item:hover {
-  background-color: #003366; /* Une teinte plus sombre de bleu au survol */
+  background-color: #2623e641; /* Une teinte plus sombre de bleu au survol */
   color: #ffffff; /* Garder le texte en blanc */
 }
 
