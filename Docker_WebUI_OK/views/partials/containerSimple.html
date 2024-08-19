@@ -26,11 +26,11 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="19" r="1"></circle><circle cx="12" cy="5" r="1"></circle></svg>
                   </a>
                   <div class="dropdown-menu dropdown-menu-end">
-                    <button class="dropdown-item text-secondary" name="AppName" id="details" data-hx-get="/dashboard/modals" data-hx-target="#modals-here" hx-swap="innerHTML" data-hx-trigger="click" data-bs-toggle="modal" data-bs-target="#modals-here">Detail</button>
+                    <button class="dropdown-item text-secondary" name="AppName" id="details" data-hx-get="/dashboard/modals" data-hx-target="#modals-here" hx-swap="innerHTML" data-hx-trigger="click" data-bs-toggle="modal" data-bs-target="#modals-here">Details</button>
                     <button class="dropdown-item text-secondary" name="AppName" id="logs" data-hx-get="/dashboard/logs" hx-swap="innerHTML" data-hx-target="#logView" data-bs-toggle="modal" data-bs-target="#log_view">Logs</button>
-                    <button class="dropdown-item text-secondary" name="AppName" id="edit">Editer</button>
-                    <button class="dropdown-item text-primary" name="AppName" id="update" disabled="">Updater</button>
-                    <button class="dropdown-item text-danger" name="AppName" id="uninstall" hx-trigger="click" data-hx-get="/modals" hx-swap="innerHTML" data-bs-toggle="modal" data-hx-target="#modals-here" data-bs-target="#modals-here">Supprimer</button>
+                    <button class="dropdown-item text-secondary" name="AppName" id="edit">Edit</button>
+                    <button class="dropdown-item text-primary" name="AppName" id="update" disabled="">Update</button>
+                    <button class="dropdown-item text-danger" name="AppName" id="uninstall" hx-trigger="click" data-hx-get="/modals" hx-swap="innerHTML" data-bs-toggle="modal" data-hx-target="#modals-here" data-bs-target="#modals-here">Uninstall</button>
                   </div>
                 </div>
                 <div class="dropdown">
@@ -38,8 +38,8 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler icon-tabler-eye" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /> <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /> </svg>
                   </a>
                   <div class="dropdown-menu dropdown-menu-end">
-                    <button class="dropdown-item text-secondary" data-hx-post="/dashboard/hide" data-hx-trigger="click" data-hx-swap="none" name="AppName" id="hide" value="hide">Cacher</button>
-                    <button class="dropdown-item text-secondary" data-hx-post="/dashboard/reset" data-hx-trigger="click" data-hx-swap="none" name="AppName" id="reset" value="reset">Reset</button>
+                    <button class="dropdown-item text-secondary" data-hx-post="/dashboard/hide" data-hx-trigger="click" data-hx-swap="none" name="AppName" id="hide" value="hide">Hide</button>
+                    <button class="dropdown-item text-secondary" data-hx-post="/dashboard/reset" data-hx-trigger="click" data-hx-swap="none" name="AppName" id="reset" value="reset">Reset View</button>
                     <button class="dropdown-item text-secondary" name="AppName" id="permissions" data-hx-get="/modals" data-hx-target="#modals-here" hx-swap="innerHTML" data-hx-trigger="click" data-bs-toggle="modal" data-bs-target="#modals-here">Permissions</button>
                   </div>
                 </div>
