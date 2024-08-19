@@ -40,8 +40,8 @@
         <div class="card">
           
           <div class="card-body text-center py-4">
-            <h1 class="mt-1">Welcome to EPSI Registration Page</h1>
-            <p class="text-muted">Account information is stored in a local sqlite database.</p>
+            <h1 class="mt-1">Bienvenue sur la page d'inscription de l'application</h1>
+            <p class="text-muted">Les informations d'authentification seront stockées dans une base locale sqlite.</p>
 
             <% if(error) { %>
               <div class="alert alert-danger" role="alert">
@@ -56,36 +56,36 @@
             <div class="row row-cards">
               <div class="col-sm-6 col-md-6">
                 <div class="mb-2">
-                  <label class="form-label">Name</label>
+                  <label class="form-label">Nom</label>
                   <input type="text" class="form-control" id="name" name="name">
                 </div>
               </div>
               <div class="col-sm-6 col-md-6">
                 <div class="mb-2">
-                  <label class="form-label">Username</label>
+                  <label class="form-label">Prénom</label>
                   <input type="text" class="form-control" id="username" name="username">
                 </div>
               </div>
             </div>
             <div class="mb-2">
-              <label class="form-label">Email address</label>
+              <label class="form-label">Adresse E-mail</label>
               <input type="email" class="form-control" id="email" name="email">
             </div>
             <div class="mb-2">
-              <label class="form-label">Password</label>
+              <label class="form-label">Mot de Passe</label>
               <div class="input-group input-group-flat">
                 <input type="password" class="form-control" id="password" name="password"  autocomplete="off">
               </div>
             </div>
             <div class="mb-2">
-              <label class="form-label">Confirm Password</label>
+              <label class="form-label">Confirmation du Mot de Passe</label>
               <div class="input-group input-group-flat">
                 <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"  autocomplete="off">
               </div>
             </div>
 
             <div class="mb-2">
-              <label class="form-label" title="Enter the value of 'SECRET' from the DweebUI docker-compose.yaml">SECRET (For Admin Access)</label>
+              <label class="form-label" title="Entrer la valeur pour permettre l'accès Admin">SECRET (Pour l'accès Admin)</label>
               <input type="text" class="form-control" id="secret" name="secret">
             </div>
 
@@ -97,7 +97,7 @@
         <div class="row align-items-center mt-2">
           
           <div class="col">
-            <a href="/login">Login</a>
+            <a href="/login">Connexion</a>
           </div>
 
           <div class="col">
@@ -113,7 +113,7 @@
                 </a>
               </div>
 
-              <button type="submit" class="btn btn-primary">Register</button>
+              <button type="submit" class="btn btn-primary">S'inscrire</button>
               
             </div>
           </div>
