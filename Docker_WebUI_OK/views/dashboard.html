@@ -47,7 +47,7 @@
               <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollables">
                 <div class="modal-content">
                   <div class="modal-header">
-                      <h5 class="modal-title">Loading</h5>
+                      <h5 class="modal-title">Chargement</h5>
                   </div>
                   <div class="modal-body text-center">
                     <div class="spinner-border"></div>
@@ -68,7 +68,7 @@
                     <div class="card-body">
                       <h4>Logs:</h4>
                         <div id="logView">
-                          <pre>No logs available</pre>
+                          <pre>Pas de logs disponible</pre>
                         </div>
                     </div>
                   </div>
@@ -92,65 +92,7 @@
     </div>
   </div>
     
-
-  <script src="/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="/js/tabler.min.js"></script>
-  <script>
-    var options = {
-        chart: {
-          type: "line",
-          height: 40.0,
-          sparkline: {
-            enabled: true
-          },
-          animations: {
-            enabled: false
-          }
-        },
-        fill: {
-          opacity: 1
-        },
-        stroke: {
-          width: [3, 1],
-          dashArray: [0, 3],
-          lineCap: "round",
-          curve: "smooth"
-        },
-        series: [{
-          name: "CPU",
-          data: []
-        }, {
-          name: "RAM",
-          data: []
-        }],
-        tooltip: {
-          enabled: false
-        },
-        grid: {
-          strokeDashArray: 4
-        },
-        xaxis: {
-          labels: {
-            padding: 0
-          },
-          tooltip: {
-            enabled: false
-          }
-        },
-        yaxis: {
-          min: 0,
-          max: 100,
-          labels: {
-            padding: 4
-          }
-        },
-        colors: [tabler.getColor("primary"), tabler.getColor("gray-600")],
-        legend: {
-          show: false
-        }
-    }
-  </script>
-  
+ 
   <!-- SelectAll for the permissions modal -->
   <script>
     function selectAll(group) {

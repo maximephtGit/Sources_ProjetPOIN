@@ -27239,7 +27239,7 @@ img {
 
 [class*=" link-"].disabled,
 [class^=link-].disabled {
-  color: var(--tblr-disabled-color);
+  color: var(--tblr-gray-300-darken);
   pointer-events: none
 }
 
