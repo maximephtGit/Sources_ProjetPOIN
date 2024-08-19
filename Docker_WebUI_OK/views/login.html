@@ -35,7 +35,7 @@
 
         <div class="card card-md">
           <div class="card-body">
-            <h2 class="h2 text-center mb-4">Login to your account</h2>
+            <h2 class="h2 text-center mb-4">Connectez-vous à votre compte"</h2>
             <form action="/login" method="POST" novalidate>
 
               <% if(error) { %>
@@ -45,12 +45,12 @@
               <% } %>
 
               <div class="mb-2">
-                <label class="form-label">Email address</label>
+                <label class="form-label">Adresse E-mail</label>
                 <input type="email" class="form-control" id="email" name="email">
               </div>
               <div class="mb-2">
                 <label class="form-label">
-                  Password
+                  Mot de Passe
                 </label>
                 <div class="input-group input-group-flat">
                   <input type="password" class="form-control"  id="password" name="password" autocomplete="off">
@@ -60,21 +60,21 @@
                 <label class="form-check">
                   <input type="checkbox" class="form-check-input" checked=""/>
                   <span class="form-check-label">
-                    Remember me
+                    Se rappeler de moi
                   </span>
                 </label>
                 <span>
-                  <a href="#">Forgot password</a>
+                  <a href="#">Mot de Passe Oublié</a>
                 </span>
               </div>
               <div class="form-footer">
-                <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                <button type="submit" class="btn btn-primary w-100">Se connecter</button>
               </div>
             </form>
           </div>
         </div>
         <div class="text-center text-muted mt-2">
-          Don't have account? <a href="/register" tabindex="-1">Register</a>
+          Vous n'avez pas de compte? <a href="/register" tabindex="-1">s'Inscrire</a>
         </div>
       </div>
     </div>
