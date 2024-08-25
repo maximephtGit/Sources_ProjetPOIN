@@ -5,11 +5,11 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      PORT: 8000
+      PORT: 8001
       SECRET: epsipoint
     restart: unless-stopped
     ports:
-      - 8000:8000
+      - 8001:8001
     volumes:
       - Docker_WebUI:/app/config
       # Docker socket

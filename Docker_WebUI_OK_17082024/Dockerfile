@@ -3,5 +3,5 @@ ENV NODE_ENV=production
 WORKDIR /app
 COPY . /app
 RUN npm install
-EXPOSE 8000
+EXPOSE 8001
 CMD node server.js
