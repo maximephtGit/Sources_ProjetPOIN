@@ -47,7 +47,7 @@ services:
     image: lllllllillllllillll/dweebui:v0.60
     environment:
       PORT: 8000
-      SECRET: MrWiskers
+      SECRET: epsipoin
       HTTPS: false
     restart: unless-stopped
     ports:

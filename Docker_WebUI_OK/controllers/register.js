@@ -1,7 +1,7 @@
 import { User, Syslog, Permission } from '../database/models.js';
 import bcrypt from 'bcrypt';
 
-let SECRET = process.env.SECRET || "MrWiskers"
+let SECRET = process.env.SECRET || "epsipoin"
 
 export const Register = function(req,res){
     if(req.session.user){
@@ -85,20 +85,20 @@ export const submitRegister = async function(req,res){
                 }
             } catch(err) {
                 res.render("register",{
-                    "error":"Something went wrong when creating account.",
+                    "error":"Une erreur s'est produite lors de la création du compte.",
                 });
             }
 
         } else {
                 // return an error.
                 res.render("register",{
-                    "error":"User with that email already exists.",
+                    "error":"Un utilisateur avec ette adresse email existe déjà.",
                 });
             }
     } else {
         // Redirect to the signup page.
         res.render("register",{
-            "error":"Please fill in all the fields.",
+            "error":"Merci de complèter tous les champs ou d'indiquer un secret correct) .",
         });
     }
 }
