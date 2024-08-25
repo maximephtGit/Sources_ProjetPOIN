@@ -162,19 +162,19 @@ export const DashboardAction = async (req, res) => {
     }
 
     // Container actions
-    if ((action == 'start') && (value == 'stopped')) {
+    if ((action == 'start') && (value == 'Arrêté')) {
         docker.getContainer(name).start();
         res.send(status('starting'));
-    } else if ((action == 'start') && (value == 'paused')) {
+    } else if ((action == 'start') && (value == 'En pause')) {
         docker.getContainer(name).unpause();
         res.send(status('starting'));
-    } else if ((action == 'stop') && (value != 'stopped')) {
+    } else if ((action == 'stop') && (value != 'Arrêté')) {
         docker.getContainer(name).stop();
         res.send(status('stopping'));
-    } else if ((action == 'pause') && (value == 'paused')) {
+    } else if ((action == 'pause') && (value == 'En pause')) {
         docker.getContainer(name).unpause();
         res.send(status('starting'));
-    }   else if ((action == 'pause') && (value == 'running')) {
+    }   else if ((action == 'pause') && (value == 'Running')) {
         docker.getContainer(name).pause();
         res.send(status('pausing'));
     } else if (action == 'restart') {
