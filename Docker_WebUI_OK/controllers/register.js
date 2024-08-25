@@ -8,7 +8,7 @@ export const Register = function(req,res){
         res.redirect("/logout");
     } else {
         res.render("register",{
-            "erreur":"",
+            "error":"",
         });
     }
 }
@@ -25,8 +25,8 @@ export const submitRegister = async function(req,res){
         const syslog = await Syslog.create({
             user: username,
             email: email,
-            event: "Erreur lors de l'inscription",
-            message: "Secret Incorrecte",
+            event: "Problème lors de l'inscription",
+            message: "Secret Incorrect",
             ip: req.socket.remoteAddress
         });
     }
@@ -76,8 +76,8 @@ export const submitRegister = async function(req,res){
                     const syslog = await Syslog.create({
                         user: req.session.user,
                         email: email,
-                        event: "Inscription Réussie",
-                        message: "Utilisateur correctement enregistré",
+                        event: "Successful Registration",
+                        message: "User registered successfully",
                         ip: req.socket.remoteAddress
                     });
 
@@ -85,20 +85,20 @@ export const submitRegister = async function(req,res){
                 }
             } catch(err) {
                 res.render("register",{
-                    "error":"Une erreur s'est produite lors de la création du compte.",
+                    "error":"Something went wrong when creating account.",
                 });
             }
 
         } else {
                 // return an error.
                 res.render("register",{
-                    "error":"L'utilisateur exste déjà avec cet email.",
+                    "error":"User with that email already exists.",
                 });
             }
     } else {
         // Redirect to the signup page.
         res.render("register",{
-            "error":"Merci de complèter tous les champs.",
+            "error":"Please fill in all the fields.",
         });
     }
 }
