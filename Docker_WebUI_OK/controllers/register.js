@@ -25,8 +25,8 @@ export const submitRegister = async function(req,res){
         const syslog = await Syslog.create({
             user: username,
             email: email,
-            event: "Problème lors de l'inscription",
-            message: "Secret Incorrect",
+            event: "Failed Registration",
+            message: "Invalid secret",
             ip: req.socket.remoteAddress
         });
     }
