@@ -8,7 +8,7 @@ export const Register = function(req,res){
         res.redirect("/logout");
     } else {
         res.render("register",{
-            "error":"",
+            "erreur":"",
         });
     }
 }
@@ -25,8 +25,8 @@ export const submitRegister = async function(req,res){
         const syslog = await Syslog.create({
             user: username,
             email: email,
-            event: "Failed Registration",
-            message: "Invalid secret",
+            event: "Erreur lors de l'inscription",
+            message: "Secret Incorrecte",
             ip: req.socket.remoteAddress
         });
     }
@@ -76,8 +76,8 @@ export const submitRegister = async function(req,res){
                     const syslog = await Syslog.create({
                         user: req.session.user,
                         email: email,
-                        event: "Successful Registration",
-                        message: "User registered successfully",
+                        event: "Inscription Réussie",
+                        message: "Utilisateur correctement enregistré",
                         ip: req.socket.remoteAddress
                     });
 
@@ -85,20 +85,20 @@ export const submitRegister = async function(req,res){
                 }
             } catch(err) {
                 res.render("register",{
-                    "error":"Something went wrong when creating account.",
+                    "error":"Une erreur s'est produite lors de la création du compte.",
                 });
             }
 
         } else {
                 // return an error.
                 res.render("register",{
-                    "error":"User with that email already exists.",
+                    "error":"L'utilisateur exste déjà avec cet email.",
                 });
             }
     } else {
         // Redirect to the signup page.
         res.render("register",{
-            "error":"Please fill in all the fields.",
+            "error":"Merci de complèter tous les champs.",
         });
     }
 }
