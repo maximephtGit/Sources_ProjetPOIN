@@ -92,13 +92,13 @@ export const submitRegister = async function(req,res){
         } else {
                 // return an error.
                 res.render("register",{
-                    "error":"Un utilisateur avec ette adresse email existe déjà.",
+                    "error":"Un utilisateur avec cette adresse email existe déjà.",
                 });
             }
     } else {
         // Redirect to the signup page.
         res.render("register",{
-            "error":"Merci de complèter tous les champs ou d'indiquer un secret correct) .",
+            "error":"Merci de complèter tous les champs ou d'indiquer un secret correct).",
         });
     }
 }
