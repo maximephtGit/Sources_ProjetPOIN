@@ -131,13 +131,13 @@ async function createCard (details) {
 let [ cardList, newCards, containersArray, sentArray, updatesArray ] = [ '', '', [], [], [] ];
 
 export async function addCard (name, state) {
-    console.log(`Adding card for ${name}: ${state}`);
+    console.log(`Ajout de carte pour ${name}: ${state}`);
 
     let details = {
         name: name,
         image: name,
         service: name,
-        state: 'installing',
+        state: 'Installation',
         external_port: 0,
         internal_port: 0,
         ports: [],
@@ -218,7 +218,7 @@ export const SSE = async (req, res) => {
 
 
 export const updateCards = async (req, res) => {
-    console.log('updateCards called');
+    console.log('Mise à jour de carte appelé');
     res.send(newCards);
     newCards = '';
 }
@@ -231,7 +231,7 @@ export const Containers = async (req, res) => {
 
 export const Card = async (req, res) => {
     let name = req.header('hx-trigger-name');
-    console.log(`${name} requesting updated card`);
+    console.log(`${name} a demandé une mise à jour de carte`);
     // return nothing if in hidden or not found in containersArray
     if (hidden.includes(name) || !containersArray.find(c => c.container === name)) {
         res.send('');
@@ -285,30 +285,30 @@ export const Action = async (req, res) => {
     if ((action == 'start') && (state == 'stopped')) {
         var containerName = docker.getContainer(name);
         containerName.start();
-        res.send(status('starting'));
+        res.send(status('Démarrage'));
     } else if ((action == 'start') && (state == 'paused')) {
         var containerName = docker.getContainer(name);
         containerName.unpause();
-        res.send(status('starting'));
+        res.send(status('Démarrage'));
     // Stop
     } else if ((action == 'stop') && (state != 'stopped')) {
         var containerName = docker.getContainer(name);
         containerName.stop();
-        res.send(status('stopping'));
+        res.send(status('Arrêt'));
     // Pause
     } else if ((action == 'pause') && (state == 'paused')) {
         var containerName = docker.getContainer(name);
         containerName.unpause();
-        res.send(status('starting'));
+        res.send(status('Démarrage'));
     }   else if ((action == 'pause') && (state == 'running')) {
         var containerName = docker.getContainer(name);
         containerName.pause();
-        res.send(status('pausing'));
+        res.send(status('Pause'));
     // Restart
     } else if (action == 'restart') {
         var containerName = docker.getContainer(name);
         containerName.restart();
-        res.send(status('restarting'));
+        res.send(status('redémarrage'));
     // Hide
     } else if (action == 'hide') {
         let exists = await Container.findOne({ where: {name: name}});

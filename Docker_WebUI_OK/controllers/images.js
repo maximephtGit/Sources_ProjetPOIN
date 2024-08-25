@@ -15,11 +15,11 @@ export const Images = async function(req, res) {
         for (let i = 0; i < images.length; i++) {
             if (images[i] != 'on') {
                 try {
-                    console.log(`Removing image: ${images[i]}`);
+                    console.log(`Suppression image: ${images[i]}`);
                     let image = docker.getImage(images[i]);
                     await image.remove();
                 } catch (error) {
-                    console.log(`Unable to remove image: ${images[i]}`);
+                    console.log(`Impossible de supprimer l'image: ${images[i]}`);
                 }
             }
         }
@@ -30,10 +30,10 @@ export const Images = async function(req, res) {
         let tag = req.body.tag || 'latest';
 
         try {
-            console.log(`Pulling image: ${image}:${tag}`);
+            console.log(`Création image: ${image}:${tag}`);
             await docker.pull(`${image}:${tag}`);
         } catch (error) {
-            console.log(`Unable to pull image: ${image}:${tag}`);
+            console.log(`Impossible de créer l'image: ${image}:${tag}`);
         }
         res.redirect("/images");
         return;

@@ -53,7 +53,7 @@
                         Category:
                       </div>
                       <div class="dropdown">
-                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Everything</button>
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Tout</button>
                         <form action="/apps" method="POST">
                           <ul class="dropdown-menu">
                             <li><input type="submit" class="dropdown-item" name="search" value="Other"></li>
@@ -89,14 +89,14 @@
                   <div class="card-body text-center">
                     <div class="d-flex align-items-center">
                       <dropdown class="me-2">
-                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Default Templates</button>
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Templates par défaut</button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="/apps">Default Templates</a></li>
-                          <li><a class="dropdown-item" href="/apps/1/compose">Compose Files</a></li>
+                          <li><a class="dropdown-item" href="/apps">Templates par défaut</a></li>
+                          <li><a class="dropdown-item" href="/apps/1/compose">Fichier Compose</a></li>
                           <%- json_templates %>
                         </ul>
                       </dropdown>
-                      <button class="btn" name="Import" id="Import" data-hx-get="/import_modal" data-hx-target="#modals-here" hx-swap="innerHTML" data-hx-trigger="click" data-bs-toggle="modal" data-bs-target="#modals-here">Import</button>
+                      <button class="btn" name="Import" id="Import" data-hx-get="/import_modal" data-hx-target="#modals-here" hx-swap="innerHTML" data-hx-trigger="click" data-bs-toggle="modal" data-bs-target="#modals-here">Importer</button>
                     </div>
                   </div>
                 </div>
@@ -131,7 +131,7 @@
               <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollables">
                 <div class="modal-content">
                   <div class="modal-header">
-                      <h5 class="modal-title">Loading</h5>
+                      <h5 class="modal-title">Chargement</h5>
                   </div>
                   <div class="modal-body text-center">
                     <div class="spinner-border"></div>

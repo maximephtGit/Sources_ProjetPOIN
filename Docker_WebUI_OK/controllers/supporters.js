@@ -25,7 +25,7 @@ export const Thanks = async (req, res) => {
     thanks++;
     let data = thanks.toString();
     if (thanks > 999) {
-        data = 'Did you really click 1000 times?!';
+        data = 'Avez-vous réellement cliqué plus de 1000 fois?!';
     }
     res.send(data);
 }

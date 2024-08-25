@@ -19,7 +19,7 @@ export const Apps = async (req, res) => {
   let template_param = req.params.template || 'default';
 
   if ((template_param != 'default') && (template_param != 'compose')) {
-    remove_button = `<a href="/remove_template/${template_param}" class="btn" hx-confirm="Are you sure you want to remove this template?">Remove</a>`;
+    remove_button = `<a href="/remove_template/${template_param}" class="btn" hx-confirm="Etes-vous sur de vouloir supprimer ce template?">Suppression</a>`;
   } else {
     remove_button = '';
   }
@@ -93,8 +93,8 @@ export const Apps = async (req, res) => {
           let name = templates[i].name || templates[i].title.toLowerCase();
           let title = templates[i].title || templates[i].name;
           let desc = templates[i].description.slice(0, 60) + "...";
-          let description = templates[i].description.replaceAll(". ", ".\n") || "no description available";
-          let note = templates[i].note ? templates[i].note.replaceAll(". ", ".\n") : "no notes available";
+          let description = templates[i].description.replaceAll(". ", ".\n") || "Pas de description disponible";
+          let note = templates[i].note ? templates[i].note.replaceAll(". ", ".\n") : "Pas de notes disponible";
           let image = templates[i].image;
           let logo = templates[i].logo;
           let categories = '';
@@ -208,8 +208,8 @@ export const appSearch = async (req, res) => {
     let appCard = readFileSync('./views/partials/appCard.html', 'utf8');
     let name = results[i].name || results[i].title.toLowerCase();
     let desc = results[i].description.slice(0, 60) + "...";
-    let description = results[i].description.replaceAll(". ", ".\n") || "no description available";
-    let note = results[i].note ? results[i].note.replaceAll(". ", ".\n") : "no notes available";
+    let description = results[i].description.replaceAll(". ", ".\n") || "Pas de description disponible";
+    let note = results[i].note ? results[i].note.replaceAll(". ", ".\n") : "Pas de notes disponible";
     let image = results[i].image;
     let logo = results[i].logo;let categories = '';
     // set data.catagories to 'other' if data.catagories is empty or undefined
@@ -308,11 +308,11 @@ export const InstallModal = async (req, res) => {
     let result = templates_global.find(t => t.name == input);
     let name = result.name || result.title.toLowerCase();
     let short_name = name.slice(0, 25) + "...";
-    let desc = result.description.replaceAll(". ", ".\n") || "no description available";
+    let desc = result.description.replaceAll(". ", ".\n") || "Pas de description disponible";
     let short_desc = desc.slice(0, 60) + "...";
     let modal_name = name.replaceAll(" ", "-");
     let form_id = name.replaceAll("-", "_");
-    let note = result.note ? result.note.replaceAll(". ", ".\n") : "no notes available";
+    let note = result.note ? result.note.replaceAll(". ", ".\n") : "Pas de notes disponible";
     let command = result.command ? result.command : "";
     let command_check = command ? "checked" : "";
     let privileged = result.privileged || "";
