@@ -26,7 +26,7 @@ export const submitRegister = async function(req,res){
             user: username,
             email: email,
             event: "Failed Registration",
-            message: "Invalid secret",
+            message: "Secret Incorrect",
             ip: req.socket.remoteAddress
         });
     }
