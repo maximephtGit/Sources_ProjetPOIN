@@ -1,7 +1,7 @@
 {
-  "name": "epsiprjpoin",
+  "name": "Studops",
   "version": "1",
-  "description": "EPSI Projet POIN Arras.",
+  "description": "Studops - Projet POIN Arras.",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "EPSI",
+  "author": "Studops",
   "license": "MIT",
   "dependencies": {
     "adm-zip": "^0.5.12",

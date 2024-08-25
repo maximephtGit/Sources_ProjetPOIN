@@ -1,12 +1,12 @@
 version: '3.0'
 services:
-  epsilab:
+  studopslab:
     build:
       context: .
       dockerfile: Dockerfile
     environment:
       PORT: 8000
-      SECRET: epsipoin
+      SECRET: studops
     restart: unless-stopped
     ports:
       - 8000:8000
@@ -17,7 +17,7 @@ services:
       # Podman socket
       #- /run/podman/podman.sock:/var/run/docker.sock
     networks:
-      - epsi_net
+      - studops_net
 
   portainer:
     image: portainer/portainer-ce:latest
@@ -32,5 +32,5 @@ volumes:
   Docker_WebUI:
 
 networks:
-  epsi_net:
+ studops_net:
     driver: bridge

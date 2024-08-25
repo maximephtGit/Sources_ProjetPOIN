@@ -1,7 +1,7 @@
 import { User, Syslog, Permission } from '../database/models.js';
 import bcrypt from 'bcrypt';
 
-let SECRET = process.env.SECRET || "epsipoin"
+let SECRET = process.env.SECRET || "studops"
 
 export const Register = function(req,res){
     if(req.session.user){
