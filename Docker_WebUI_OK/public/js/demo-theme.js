@@ -12,7 +12,7 @@
 })((function () { 'use strict';
 
 	var themeStorageKey = "tablerTheme";
-	var defaultTheme = "dark";
+	var defaultTheme = "light";
 	var selectedTheme;
 	var params = new Proxy(new URLSearchParams(window.location.search), {
 	  get: function get(searchParams, prop) {
