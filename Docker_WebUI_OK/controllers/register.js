@@ -1,7 +1,7 @@
 import { User, Syslog, Permission } from '../database/models.js';
 import bcrypt from 'bcrypt';
 
-let SECRET = process.env.SECRET || "studops"
+// let SECRET = process.env.SECRET || "studops"
 
 export const Register = function(req,res){
     if(req.session.user){
@@ -17,28 +17,28 @@ export const Register = function(req,res){
 
 export const submitRegister = async function(req,res){
 
-    let { name, username, email, password, confirmPassword, secret } = req.body;
+    let { name, username, email, password, confirmPassword } = req.body;
     email = email.toLowerCase();
 
 
-    if (secret != SECRET) {
-        const syslog = await Syslog.create({
-            user: username,
-            email: email,
-            event: "Failed Registration",
-            message: "Secret Incorrect",
-            ip: req.socket.remoteAddress
-        });
-    }
+  //  if (secret != SECRET) {
+  //      const syslog = await Syslog.create({
+  //          user: username,
+  //          email: email,
+  //          event: "Failed Registration",
+  //          message: "Secret Incorrect",
+  //          ip: req.socket.remoteAddress
+  //      });
+  //  }
 
-    if((name && email && password && confirmPassword && username) && (secret == SECRET) && (password == confirmPassword)){
+    if((name && email && password && confirmPassword && username) && (password == confirmPassword)){
 
         async function userRole () {
             let userCount = await User.count();
             if(userCount == 0){
                 return "admin";
             }else{
-                return "user";
+                return "admin";
             }
         }
 
@@ -98,7 +98,7 @@ export const submitRegister = async function(req,res){
     } else {
         // Redirect to the signup page.
         res.render("register",{
-            "error":"Merci de complèter tous les champs ou d'indiquer un secret correct).",
+            "error":"Merci de complèter tous les champs et de vérifier que les mots de passe correspondent.",
         });
     }
 }
